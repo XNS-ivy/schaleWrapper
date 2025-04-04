@@ -1,0 +1,20 @@
+{
+  "name": "schalewrapper",
+  "version": "1.0.0",
+  "description": "wrapper from schale db",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/XNS-ivy/schaleWrapper.git"
+  },
+  "license": "MIT",
+  "author": "XNS-ivy",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "cheerio": "^1.0.0"
+  }
+}
