@@ -12,7 +12,7 @@ const file = 'students.min.json'
 
 async function downloadJSON(lang) {
   const url = `https://schaledb.com/data/${lang}/${file}`
-  const outputPath = resolve(__dirname, `../assets/data/${lang}/${file}`)
+  const outputPath = resolve(__dirname, `../../assets/data/${lang}/${file}`)
 
   try {
     const dir = dirname(outputPath)
