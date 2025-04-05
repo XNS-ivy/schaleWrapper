@@ -1,18 +1,40 @@
 {
   "name": "schalewrapper",
   "version": "1.0.3",
-  "description": "wrapper from schale db",
+  "description": "A simple Node.js wrapper for Blue Archive data from SchaleDB, with multi-language support and offline sync.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/XNS-ivy/schaleWrapper.git"
+    "url": "git+https://github.com/XNS-ivy/schaleWrapper.git"
+  },
+  "homepage": "https://github.com/XNS-ivy/schaleWrapper#readme",
+  "bugs": {
+    "url": "https://github.com/XNS-ivy/schaleWrapper/issues"
   },
   "license": "MIT",
-  "author": "XNS-ivy",
+  "author": {
+    "name": "XNS-ivy",
+    "url": "https://github.com/XNS-ivy"
+  },
   "type": "module",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js"
+  },
   "scripts": {
     "test": "node test"
   },
+  "keywords": [
+    "blue-archive",
+    "schale",
+    "game-data",
+    "wrapper",
+    "api",
+    "anime",
+    "students",
+    "items",
+    "nodejs",
+    "schaledb"
+  ],
   "dependencies": {
     "axios": "^1.8.4",
     "cheerio": "^1.0.0"

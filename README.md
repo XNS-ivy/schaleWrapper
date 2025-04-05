@@ -1,7 +1,3 @@
-Got it! Here's the updated documentation with example **usage** blocks that match your style:
-
----
-
 # 📦 schalewrapper
 
 > A simple Node.js wrapper for [Schale.gg](https://schale.gg) Blue Archive data — with multi-language support and local syncing.
