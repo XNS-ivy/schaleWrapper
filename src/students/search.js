@@ -1,7 +1,7 @@
 import { getStudents, getStudentById } from './loader.js'
 
 /**
- * Normalisasi string untuk pencarian
+ * Normalization string for searching
  * @param {string} name
  * @returns {string}
  */
@@ -10,7 +10,7 @@ function normalize(name) {
 }
 
 /**
- * Cari student berdasarkan nama
+ * Find Student by specific name
  * @param {string} name
  * @param {string} lang
  * @returns {import('../../types/student').Student[]}
@@ -37,4 +37,8 @@ export function getStudentByName(name = '', lang = 'en') {
 
 export function getAllStudents(lang = 'en') {
   return getStudents(lang)
+}
+
+export function getStudent(id, lang = 'en') {
+  return getStudentById(Number(id), lang)
 }

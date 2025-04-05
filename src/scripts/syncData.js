@@ -8,9 +8,9 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
 const langs = ['cn', 'jp', 'en', 'tw', 'kr', 'th']
-const file = 'students.min.json'
+const files = ['students.min.json', 'localization.json', 'equipment.json', 'items.json', 'furniture.json','raids.json']
 
-async function downloadJSON(lang) {
+async function downloadJSON(lang, file) {
   const url = `https://schaledb.com/data/${lang}/${file}`
   const outputPath = resolve(__dirname, `../../assets/data/${lang}/${file}`)
 
@@ -26,18 +26,14 @@ async function downloadJSON(lang) {
 
     console.log(`[OK] Downloaded ${file} for ${lang}`)
   } catch (err) {
-    console.error(`[ERR] ${lang}:`, err.message)
-  }
-}
-
-async function downloadAll() {
-  for (const lang of langs) {
-    await downloadJSON(lang)
+    console.error(`[ERR] ${file} (${lang}):`, err.message)
   }
 }
 
 export async function syncAllLanguages() {
   for (const lang of langs) {
-    await downloadJSON(lang)
+    for (const file of files) {
+      await downloadJSON(lang, file)
+    }
   }
 }
