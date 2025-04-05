@@ -1,6 +1,6 @@
 {
   "name": "schalewrapper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "wrapper from schale db",
   "repository": {
     "type": "git",
