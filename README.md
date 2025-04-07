@@ -34,7 +34,11 @@ import { syncAllLanguages } from 'schalewrapper'
 await syncAllLanguages()
 ```
 
-This will download and store data files into `./assets/data/<lang>`.
+This will download and store data files into:
+
+```
+./assets/data/<lang>/
+```
 
 ---
 
@@ -43,27 +47,27 @@ This will download and store data files into `./assets/data/<lang>`.
 ### 🔍 Find student by name
 
 ```js
-import studentFetcher from 'schalewrapper'
+import { findStudentByName } from 'schalewrapper'
 
-const student = await studentFetcher.findStudentByName('hoshino', 'en')
+const student = await findStudentByName('hoshino', 'en')
 console.log(student)
 ```
 
 ### 🔍 Find student by ID
 
 ```js
-import studentFetcher from 'schalewrapper'
+import { findStudentById } from 'schalewrapper'
 
-const student = await studentFetcher.findStudentById(10000, 'en')
-console.log(student)
+const studentId = await findStudentById(10000, 'en')
+console.log(studentId)
 ```
 
 ### 📋 Get all students
 
 ```js
-import studentFetcher from 'schalewrapper'
+import { findAllStudent } from 'schalewrapper'
 
-const allStudents = await studentFetcher.findAllStudent('en')
+const allStudents = await findAllStudent('en')
 console.log(allStudents.length)
 ```
 
@@ -74,27 +78,27 @@ console.log(allStudents.length)
 ### 🔍 Find item by name
 
 ```js
-import itemFetcher from 'schalewrapper'
+import { findItemByName } from 'schalewrapper'
 
-const item = await itemFetcher.findItemByName('keystone', 'en')
-console.log(item)
+const itemName = await findItemByName('keystone', 'en')
+console.log(itemName)
 ```
 
 ### 🔍 Find item by ID
 
 ```js
-import itemFetcher from 'schalewrapper'
+import { findItemById } from 'schalewrapper'
 
-const item = await itemFetcher.findItemById(1, 'en')
-console.log(item)
+const itemId = await findItemById(1, 'en')
+console.log(itemId)
 ```
 
 ### 📋 Get all items
 
 ```js
-import itemFetcher from 'schalewrapper'
+import { findAllItems } from 'schalewrapper'
 
-const items = await itemFetcher.findAllItems('en')
+const items = await findAllItems('en')
 console.log(items.length)
 ```
 
