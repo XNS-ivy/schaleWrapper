@@ -49,7 +49,7 @@ export function getStudents(lang = 'en') {
   return studentMap.get(lang) || []
 }
 
-export function getStudentById(id, lang = 'en') {
+export function getStudentId(id, lang = 'en') {
   initStudentMap()
   return studentMap.get(lang)?.find(s => s.Id === id)
 }

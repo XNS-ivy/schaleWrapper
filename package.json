@@ -16,9 +16,10 @@
     "url": "https://github.com/XNS-ivy"
   },
   "type": "module",
-  "main": "index.js",
+  "main": "./index.cjs",
   "exports": {
-    ".": "./index.js"
+    "import": "./index.js",
+    "require": "./index.cjs"
   },
   "scripts": {
     "test": "node test"

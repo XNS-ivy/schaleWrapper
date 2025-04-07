@@ -26,94 +26,75 @@ npm install schalewrapper
 
 ## 🔧 Data Sync
 
-Before accessing data, sync it locally from SchaleDB:
+Before accessing any data, sync all language data locally from SchaleDB:
 
 ```js
-// <-- Update data
 import { syncAllLanguages } from 'schalewrapper'
 
-syncAllLanguages()
+await syncAllLanguages()
 ```
+
+This will download and store data files into `./assets/data/<lang>`.
 
 ---
 
 ## 👧 Students
 
-### 🔎 Get student by name
+### 🔍 Find student by name
 
 ```js
-// <-- Get Student By Name
-import { getStudentByName } from 'schalewrapper'
+import studentFetcher from 'schalewrapper'
 
-const test = async () => {
-  const results = getStudentByName('Hoshino', 'en')
-
-  for (const s of results) {
-    console.log(s)
-  }
-}
-
-test()
+const student = await studentFetcher.findStudentByName('hoshino', 'en')
+console.log(student)
 ```
 
-### 🔎 Get student by ID
+### 🔍 Find student by ID
 
 ```js
-// <-- Get Student By ID
-import { getStudentById } from 'schalewrapper'
+import studentFetcher from 'schalewrapper'
 
-const student = getStudentById(1022, 'jp')
+const student = await studentFetcher.findStudentById(10000, 'en')
 console.log(student)
 ```
 
 ### 📋 Get all students
 
 ```js
-// <-- Get All Students
-import { getAllStudents } from 'schalewrapper'
+import studentFetcher from 'schalewrapper'
 
-const all = getAllStudents('kr')
-console.log(all.length)
+const allStudents = await studentFetcher.findAllStudent('en')
+console.log(allStudents.length)
 ```
 
 ---
 
 ## 🎒 Items
 
-### 🔎 Get item by name
+### 🔍 Find item by name
 
 ```js
-// <-- Get Item By Name
-import { getItemByName } from 'schalewrapper'
+import itemFetcher from 'schalewrapper'
 
-const test2 = async () => {
-  const results = getItemByName('keystone', 'en')
-
-  for (const item of results) {
-    console.log(item)
-  }
-}
-
-test2()
+const item = await itemFetcher.findItemByName('keystone', 'en')
+console.log(item)
 ```
 
-### 🔎 Get item by ID
+### 🔍 Find item by ID
 
 ```js
-// <-- Get Item By ID
-import { getItemById } from 'schalewrapper'
+import itemFetcher from 'schalewrapper'
 
-const item = getItemById(20001, 'en')
+const item = await itemFetcher.findItemById(1, 'en')
 console.log(item)
 ```
 
 ### 📋 Get all items
 
 ```js
-// <-- Get All Items
-import { getAllItems } from 'schalewrapper'
+import itemFetcher from 'schalewrapper'
 
-const items = getAllItems('jp')
+const items = await itemFetcher.findAllItems('en')
 console.log(items.length)
 ```
 
@@ -121,6 +102,12 @@ console.log(items.length)
 
 ## 📁 Data Files
 
-Saved to `assets/data/<lang>/<file>.json` for offline access.
+All data is stored offline in:
+
+```
+assets/data/<lang>/<file>.json
+```
+
+You can manually explore or load these files for custom processing.
 
 ---

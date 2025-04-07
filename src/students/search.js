@@ -1,4 +1,4 @@
-import { getStudents, getStudentById } from './loader.js'
+import { getStudents, getStudentId } from './loader.js'
 
 /**
  * Normalization string for searching
@@ -39,6 +39,6 @@ export function getAllStudents(lang = 'en') {
   return getStudents(lang)
 }
 
-export function getStudent(id, lang = 'en') {
-  return getStudentById(Number(id), lang)
+export function getStudentById(id, lang = 'en') {
+  return getStudentId(Number(id), lang)
 }

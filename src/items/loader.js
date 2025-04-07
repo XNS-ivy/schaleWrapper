@@ -27,7 +27,7 @@ export function getItems(lang = 'en') {
   return itemMap.get(lang) || []
 }
 
-export function getItemById(id, lang = 'en') {
+export function getItemId(id, lang = 'en') {
   initItemMap()
   return itemMap.get(lang)?.find(item => item.Id === id)
 }

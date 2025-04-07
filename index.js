@@ -1,5 +1,3 @@
-export * from './src/scripts/syncData.js'
-export * from './src/students/loader.js'
-export * from './src/students/search.js'
-export * from './src/items/loader.js'
-export * from './src/items/search.js'
+export { syncAllLanguages } from './src/scripts/syncData.js'
+export * from './src/items/fetch.js'
+export * from './src/students/fetch.js'

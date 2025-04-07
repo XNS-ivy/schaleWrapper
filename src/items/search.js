@@ -1,4 +1,4 @@
-import { getItems } from './loader.js'
+import { getItemId, getItems } from './loader.js'
 
 /**
  * Normalization string for searching
@@ -39,4 +39,8 @@ export function getItemByName(name = '', lang = 'en') {
  */
 export function getAllItems(lang = 'en') {
   return getItems(lang)
+}
+
+export function getItemById(id = Number() , lang = 'en'){
+  return getItemId(Number(id), lang)
 }
