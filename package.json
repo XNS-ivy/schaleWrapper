@@ -1,6 +1,6 @@
 {
   "name": "schalewrapper",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A simple Node.js wrapper for Blue Archive data from SchaleDB, with multi-language support and offline sync.",
   "repository": {
     "type": "git",
