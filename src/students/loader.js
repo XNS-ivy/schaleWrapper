@@ -1,10 +1,9 @@
 import { existsSync, readFileSync } from 'fs'
-import { resolve, dirname } from 'path'
-import { fileURLToPath } from 'url'
+import { resolve } from 'path'
 import asArray from '../../utils/asArray.js'
+import { getDirname } from '../../utils/dirname.js'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const __dirname = getDirname(import.meta.url)
 
 const langs = ['cn', 'jp', 'en', 'tw', 'kr', 'th', 'vi']
 const studentMap = new Map()
@@ -26,7 +25,6 @@ export function initStudentMap() {
     if (!existsSync(filePath)) continue
 
     const data = asArray(JSON.parse(readFileSync(filePath, 'utf-8')))
-    // console.log(`[DEBUG] Sample student from '${lang}':`, data[0])
     for (const s of data) {
       const skills = []
       for (const key in s.Skills) {

@@ -1,10 +1,9 @@
 import { existsSync, readFileSync } from 'fs'
-import { resolve, dirname } from 'path'
-import { fileURLToPath } from 'url'
+import { resolve } from 'path'
+import { getDirname } from '../../utils/dirname.js'
 import asArray from '../../utils/asArray.js'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const __dirname = getDirname(import.meta.url)
 
 const langs = ['cn', 'jp', 'en', 'tw', 'kr', 'th', 'vi']
 const itemMap = new Map()

@@ -1,14 +1,20 @@
 import { mkdir, writeFile } from 'fs/promises'
 import { existsSync } from 'fs'
-import { dirname, resolve } from 'path'
+import { resolve, dirname } from 'path'
 import axios from 'axios'
-import { fileURLToPath } from 'url'
+import { getDirname } from '../../utils/dirname.js'
 
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = dirname(__filename)
+const __dirname = getDirname(import.meta.url)
 
 const langs = ['cn', 'jp', 'en', 'tw', 'kr', 'th']
-const files = ['students.min.json', 'localization.json', 'equipment.json', 'items.json', 'furniture.json','raids.json']
+const files = [
+  'students.min.json',
+  'localization.json',
+  'equipment.json',
+  'items.json',
+  'furniture.json',
+  'raids.json'
+]
 
 async function downloadJSON(lang, file) {
   const url = `https://schaledb.com/data/${lang}/${file}`
